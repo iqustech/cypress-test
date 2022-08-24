@@ -22,22 +22,29 @@ jobs:
         with:
           path: temp
 
-      - name: echo matrix name
-        run: echo ${{ matrix.containers }}
-
-      - name: echo user id
-        run: id
-
-      - name: echo user
-        run: ls -l /home/
-
-      - name: "UI Tests - Chrome"
-        uses: cypress-io/github-action@v4
+      - name: Node Setup
+        uses: actions/setup-node@v1
         with:
-          working-directory: temp/frontend
-          browser: chrome
-        env:
-          DEBUG: "cypress:server:args"
+          node-version: '16.x'
+
+      - name: Npm install
+        run: npm install
+        with:
+          path: temp/frontend
+
+      - name: Run Cypress
+        run: npm run cypress run -- --browser chrome
+        with:
+          path: temp/frontend
+
+
+      # - name: "UI Tests - Chrome"
+      #   uses: cypress-io/github-action@v4
+      #   with:
+      #     working-directory: temp/frontend
+      #     browser: chrome
+      #   env:
+      #     DEBUG: "cypress:server:args"
 
 
 # name: e2e_test
