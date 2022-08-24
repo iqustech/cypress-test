@@ -28,14 +28,12 @@ jobs:
           node-version: '16.x'
 
       - name: Npm install
+        working-directory: temp/frontend
         run: npm install
-        with:
-          path: temp/frontend
 
       - name: Run Cypress
+        working-directory: temp/frontend
         run: npm run cypress run -- --browser chrome
-        with:
-          path: temp/frontend
 
 
       # - name: "UI Tests - Chrome"
