@@ -3,7 +3,7 @@ on: [push]
 jobs:
   ui-chrome-tests:
     timeout-minutes: 15
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     # container:
     #   image: cypress/browsers:node16.13.0-chrome95-ff94
     #   options: --user 1001
