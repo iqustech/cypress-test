@@ -33,7 +33,7 @@ jobs:
 
       - name: Run Cypress
         working-directory: temp/frontend
-        run: npm run cypress run -- --browser chrome
+        run: Cypress run --browser chrome
 
 
       # - name: "UI Tests - Chrome"
