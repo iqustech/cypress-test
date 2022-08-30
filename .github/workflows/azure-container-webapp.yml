@@ -34,11 +34,11 @@ jobs:
 
       - name: Run Cypress
         working-directory: temp/frontend
-        run: echo ${{ matrix.length }}
+        run: echo ${{ strategy.job-total }}
 
       - name: Run Cypress2
         working-directory: temp/frontend
-        run: echo ${{ matrix.containers.length }}
+        run: echo ${{ strategy.job-index }}
 
 
       # - name: "UI Tests - Chrome"
