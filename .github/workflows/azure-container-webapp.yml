@@ -33,7 +33,7 @@ jobs:
 
       - name: Run Cypress
         working-directory: temp/frontend
-        run: Cypress run --browser chrome
+        run: echo ${{ matrix }}
 
 
       # - name: "UI Tests - Chrome"
