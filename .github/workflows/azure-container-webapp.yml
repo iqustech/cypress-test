@@ -34,7 +34,11 @@ jobs:
 
       - name: Run Cypress
         working-directory: temp/frontend
-        run: echo ${{ matrix }}
+        run: echo ${{ matrix.length }}
+
+      - name: Run Cypress2
+        working-directory: temp/frontend
+        run: echo ${{ matrix.containers.length }}
 
 
       # - name: "UI Tests - Chrome"
